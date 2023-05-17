@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .button-group {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+
+        .button-group button {
+            width: 100%;
+            border: none;
+            background-color: #eee;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 50px 0;
+        }
+        .button-group button {
+            width: 230px;
+            height: 50px;
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: .5px;
+        }
+        .button-group button.active {
+            background-color: dodgerblue;
+            color: white;
+            transition: .4s;
+        }
+
+        .catalog-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            display: none;
+            padding: 10px;
+        }
+        .logo {
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+    .logo img {
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .content.active {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+      
+        border-radius: 10px;
+    }
+    .actives-wparper {
+        margin: 10px 0;
+        padding: 10px 10px 10px 0;
+        display: flex;
+        background-color: rgb(231, 236, 236);
+    }
+    .content-text h3 {
+        margin: 5px 0;
+        font-size: 25px;
+    }
+    .tags p {
+        margin: 5px 0;
+    }
+    .content-text  .paragraph {
+        text-align: justify;
+        text-indent: 15px;
+    }
+    .content-text p span {
+        font-weight: bold;
+    }
+    .content-text button {
+        outline: none;
+        background-color: #009999;
+        border: none;
+    }
+    .content-text button a {
+        text-decoration: none;
+        color: white;
+    }
+    .content-text span a {
+        text-decoration: none;
+        color: rgb(12, 12, 12);
+        font-weight: bold;
+    }
+
+    @media only screen and (max-width: 800px) {
+    .actives-wparper {
+            flex-direction: column;
+            padding: 10px;
+    }
+    .button-group button {
+            width: 220px;
+            margin: 0 10px;
+            font-size: 16px;
+            letter-spacing: .3px;
+        }
+}
+@media only screen and (max-width: 500px) {
+    .actives-wparper {
+            flex-direction: column;
+            padding: 5px;
+    }
+    .button-group button {
+        width: 125px;
+            margin: 0 5px;
+            font-size: 13px;
+            letter-spacing: .3px;
+        }
+}
+    </style>
+    <div class="button-group">
+        <button class="active" onclick="toggleButton(this)">წვდომა ბიბლიოთეკიდან და დისტანციურად</button>
+      </div>
+      
+      <div class="catalog-content">
+            <div class="content active">
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture1.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://web.p.ebscohost.com/ehost/search/selectdb?vid=0&sid=4a013e62-47d5-48d7-b95b-8547f1b867b6%40redis">EBSCO books</a> </span>  - აკადემიური გამოცემის წიგნები, რომელიც მოიცავს განათლების, ენათმეცნიერებისა
+                            და ლიტერატურათმცოდნეობის, რელიგიისა და სოციალური მეცნიერებების, ბიზნესისა და
+                            ეკონომიკის, ტექნოლოგიისა და ინჟინერიის, მედიცინის, ხელოვნებისსხვა მრავალ მიმართულებას.
+                            მოცემულია წიგნების 230 000-მდე მაღალკვალიფიციური გამოცემა.
+                        </p>
+                        <button><a href="https://web.p.ebscohost.com/ehost/search/selectdb?vid=0&sid=4a013e62-47d5-48d7-b95b-8547f1b867b6%40redis">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture2.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://www.cambridge.org/core">Cambridge books Online </a> </span> - STM წიგნები საბუნებისმეტყველო, ტექნოლოგიური და სამედიცინო
+                            თემატიკით; სახელმძღვანელოები და მონოგრაფიები მათემატიკის, ფიზიკისა და ასტრონომიის,
+                            ინჟინერიის, კომპიუტერულ მეცნიერებათა, ფსიქოლოგია-ფსიქიატრიის და სხვა მიმართულებით.
+                            მოცემულია 11 500-მდე წიგნის აკადემიური გამოცემა.
+                        </p>
+                        <button><a href="https://www.cambridge.org/core">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture3.jpg" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://www.oxfordartonline.com/groveart">Oxford Grove Art </a> </span> 
+                            - ხელოვნებისა და არქიტექტურის მიმართულება. ვიზუალური და დეკორატიული
+                            კულტურისა და ხელოვნების ნიმუშები; ადრეული და თანამედროვე ხელოვნების მუზეუმები.
+                            მასალები ეგვიპტური, რომაული, ბერძნული, შუასაუკენეების და თანამედროვე ხელოვნების შესახებ.
+                            ფილმოგრაფია, გრაფიკული დიზაინი, ინტერიერის დიზაინი, სცენოგრაფია, სკულპტურა.
+                            მოცემულია 31 500-ზე მეტი სამეცნიერო სტატია და ინფორმაცია 8 000-ზე მეტი ხელოვნების ნიმუშის
+                            შესახებ.
+                        </p>
+                        <button><a href="https://www.oxfordartonline.com/groveart">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture4.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://www.elgaronline.com/">Edward Elgar Publishing Journals and Development Studies e-books </a> </span>
+                            - ჟურნალები ჰუმანიტარი და
+                            ეკონომიკური მიმართულებით.
+                            წიგნები საჯარო და სოციალური მმართველობის, კორპორაციული მართვის, მიგრაციის,
+                            ბიზნესისა და მენეჯმენტის, ინფრასტრუქტურის განვითარების, ინტელექტუალური
+                            საკუთრების კვლევათა შესახებ.
+                            წარმოდგენილია 1300-ზე მეტი წიგნი და 20-მდე სახელწოდების ჟურნალისერიული გამოცემა.
+                        </p>
+                        <button><a href="https://www.elgaronline.com/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+
+
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture6.jpg" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://journals.sagepub.com/">SAGE Premier</a> </span> 
+                            - წარმოდგენილია სამეცნიერო, მაღალრეიტინგული ჟურნალები
+                            ჰუმანიტარული და სოციალურ მეცნიერებათა, ბიოლოგიურ, სამედიცინო და საინჟინრო
+                            ტექნოლოგიური სფეროებიდან.
+                            მოცემულია1200-ზე მეტი დასახელების, სხვადსხვა წლების გამოცემული ნომრები.
+                        </p>
+                        <button><a href="https://journals.sagepub.com/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture5.png" alt="library logo">
+                    </div>
+
+
+
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://read.dukeupress.edu/">e-Duke Journals Scholarly Collection</a> </span> - ჟურნალების გამოცემები მოიცავს ხელოვნების,
+                                ისტორიის, კულტუროლოგიის, პედაგოგიკის, ფილოსოფიის, სოციოლოგიის, გენდერის,
+                                რელიგიის საერთაშორისო და რეგიონალური მიმართულების კვლევების მიმართულებებს.
+                        </p>
+                        <button><a href="https://read.dukeupress.edu/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture10.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://royalsociety.org/journals/">Royal Society Journals Collection</a> </span> 
+                             - ჟურნალები ბიოლოგიურ მეცნიერებების, ფიზიკის,
+                             მათემატიკის, ინჟინერიისადა მათი მომიჯნავედისციპლინებისშესახებ.
+                        </p>
+                        <button><a href="https://royalsociety.org/journals/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture2.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://www.cambridge.org/core">Cambridge Journals Online </a> </span> - 
+                            ჟურნალები ჰუმანიტარულ და სოციალური მეცნიერებების, ისტორია,
+                            ენათმეცნიერება, ფილოსოფია, პოლიტიკა, სამართალი, მენეჯმენტის, აგრეთვე ასტრონომია,
+                            მათემატიკა, ფიზიკა, ქიმია, ხელოვნება, მასმედია და კომუნიკაცია, გეოგრაფია და სხვა მრავალი
+                            მიმართულებით.
+                            წარმოდგენილია 530-ზე მეტი სახელწოდების ჟურნალს პერიოდული ნომრები.
+                            
+                        </p>
+                        <button><a href="https://www.cambridge.org/core">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture7.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://msp.org/">Royal Society Journals Collection</a> </span> 
+                            - მოიცავს 20რეფერირებად ჟურნალს მათემატიკისა და
+                            მისი მომიჯნავე დისციპლინების მიმართულებით.
+                            ძირითადი სფეროებია: სტატისტიკა, ანალიტიკა, ალგებრა, გეომეტრია, მექანიკა, ინჟინერია და
+                            სხვ.
+                        </p>
+                        <button><a href="https://msp.org/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture8.jpg" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://dl.acm.org/">ACM Digital Library</a> </span> 
+                             - ჟურნალების ძირითადი მიმართულებაა მექანიკური ინჟინერია და
+                             სხვადასხვა საინჟინრო მიმართულება, მათ შორისაა: აეროკოსმიური, საზღვაო,
+                             ნანოინჟინერიის, სამედიცინო, მანქანათმშენებლობის და სხვა დარგები. მოიცავს 20-მდე
+                             რეფერირებად ჟურნალს. 
+                        </p>
+                        <button><a href="https://dl.acm.org/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture9.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://uk.sagepub.com/en-gb/eur/IMEchE">IMechE Journals</a> </span> 
+                             - ჟურნალების ძირითადი მიმართულებაა მექანიკური ინჟინერია და
+                             სხვადასხვა საინჟინრო მიმართულება, მათ შორისაა: აეროკოსმიური, საზღვაო,
+                             ნანოინჟინერიის, სამედიცინო, მანქანათმშენებლობის და სხვა დარგები. მოიცავს 20-მდე
+                             რეფერირებად ჟურნალს. 
+                        </p>
+                        <button><a href="https://uk.sagepub.com/en-gb/eur/IMEchE">ბმულის გახსნა</a></button>
+                    </div>
+                </div> 
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture12.jpg" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://www.biologists.com/">The Company of Biologists' Journals</a> </span> 
+                             - ძირითადად ფრანგულენოვანი ჟურნალების ბაზაა
+                             ჰუმანიტარული და სოციალური მეცნიერებების მიმართულებით. აბსტრაქტები
+                             მოცემულია სხვადასხვა ევროპულენებზე.                             
+                        </p>
+                        <button><a href="https://www.biologists.com/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture11.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://erj.ersjournals.com/">European Respiratory Journal</a> </span> 
+                             - კლინიკური და ექსპერიმენტული მედიცინის მიმართულება -
+                             წარმოდგენილია სტატიები ბიოლოგიური, ეპიდემიოლოგიური, იმუნოლოგიური,
+                             ონკოლოგიური და სხვ. მიმართულებებით. 
+                        </p>
+                        <button><a href="https://erj.ersjournals.com/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+
+                <div class="actives-wparper">
+                    <div class="logo">
+                        <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture13.png" alt="library logo">
+                    </div>
+                    <div class="content-text">
+                        <p class="paragraph">
+                            <span><a href="https://www.openedition.org/">Openedition Journals</a> </span> 
+                             - სამეცნიერო ბაზა წარმოდგენილია
+                             ჟურნალით - უჯრედული მეცნიერების და ექსპერიმენტული ბიოლოგიის
+                             სფეროებისშესახებ.                             
+                        </p>
+                        <button><a href="https://www.openedition.org/">ბმულის გახსნა</a></button>
+                    </div>
+                </div>
+
+            </div>
+       
+      </div>
+      <!-- <script>
+        function toggleButton(button) {
+            // Remove active class from all buttons
+            var buttons = document.querySelectorAll('.button-group button');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Show corresponding content
+            var index = Array.prototype.indexOf.call(button.parentNode.children, button);
+            var contents = document.querySelectorAll('.content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            contents[index].classList.add('active');
+            }
+      </script> -->
+</body>
+</html>
+
+<div class="content">
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture1.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://web.p.ebscohost.com/ehost/search/selectdb?vid=0&sid=4a013e62-47d5-48d7-b95b-8547f1b867b6%40redis">EBSCO books</a> </span>  - აკადემიური გამოცემის წიგნები, რომელიც მოიცავს განათლების, ენათმეცნიერებისა
+                და ლიტერატურათმცოდნეობის, რელიგიისა და სოციალური მეცნიერებების, ბიზნესისა და
+                ეკონომიკის, ტექნოლოგიისა და ინჟინერიის, მედიცინის, ხელოვნებისსხვა მრავალ მიმართულებას.
+                მოცემულია წიგნების 230 000-მდე მაღალკვალიფიციური გამოცემა.
+            </p>
+            <button><a href="https://web.p.ebscohost.com/ehost/search/selectdb?vid=0&sid=4a013e62-47d5-48d7-b95b-8547f1b867b6%40redis">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture2.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://www.cambridge.org/core">Cambridge books Online </a> </span> - STM წიგნები საბუნებისმეტყველო, ტექნოლოგიური და სამედიცინო
+                თემატიკით; სახელმძღვანელოები და მონოგრაფიები მათემატიკის, ფიზიკისა და ასტრონომიის,
+                ინჟინერიის, კომპიუტერულ მეცნიერებათა, ფსიქოლოგია-ფსიქიატრიის და სხვა მიმართულებით.
+                მოცემულია 11 500-მდე წიგნის აკადემიური გამოცემა.
+            </p>
+            <button><a href="https://www.cambridge.org/core">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture3.jpg" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://www.oxfordartonline.com/groveart">Oxford Grove Art </a> </span> 
+                - ხელოვნებისა და არქიტექტურის მიმართულება. ვიზუალური და დეკორატიული
+                კულტურისა და ხელოვნების ნიმუშები; ადრეული და თანამედროვე ხელოვნების მუზეუმები.
+                მასალები ეგვიპტური, რომაული, ბერძნული, შუასაუკენეების და თანამედროვე ხელოვნების შესახებ.
+                ფილმოგრაფია, გრაფიკული დიზაინი, ინტერიერის დიზაინი, სცენოგრაფია, სკულპტურა.
+                მოცემულია 31 500-ზე მეტი სამეცნიერო სტატია და ინფორმაცია 8 000-ზე მეტი ხელოვნების ნიმუშის
+                შესახებ.
+            </p>
+            <button><a href="https://www.oxfordartonline.com/groveart">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture4.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://www.elgaronline.com/">Edward Elgar Publishing Journals and Development Studies e-books </a> </span>
+                - ჟურნალები ჰუმანიტარი და
+                ეკონომიკური მიმართულებით.
+                წიგნები საჯარო და სოციალური მმართველობის, კორპორაციული მართვის, მიგრაციის,
+                ბიზნესისა და მენეჯმენტის, ინფრასტრუქტურის განვითარების, ინტელექტუალური
+                საკუთრების კვლევათა შესახებ.
+                წარმოდგენილია 1300-ზე მეტი წიგნი და 20-მდე სახელწოდების ჟურნალისერიული გამოცემა.
+            </p>
+            <button><a href="https://www.elgaronline.com/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+
+
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture6.jpg" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://journals.sagepub.com/">SAGE Premier</a> </span> 
+                - წარმოდგენილია სამეცნიერო, მაღალრეიტინგული ჟურნალები
+                ჰუმანიტარული და სოციალურ მეცნიერებათა, ბიოლოგიურ, სამედიცინო და საინჟინრო
+                ტექნოლოგიური სფეროებიდან.
+                მოცემულია1200-ზე მეტი დასახელების, სხვადსხვა წლების გამოცემული ნომრები.
+            </p>
+            <button><a href="https://journals.sagepub.com/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture5.png" alt="library logo">
+        </div>
+
+
+
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://read.dukeupress.edu/">e-Duke Journals Scholarly Collection</a> </span> - ჟურნალების გამოცემები მოიცავს ხელოვნების,
+                    ისტორიის, კულტუროლოგიის, პედაგოგიკის, ფილოსოფიის, სოციოლოგიის, გენდერის,
+                    რელიგიის საერთაშორისო და რეგიონალური მიმართულების კვლევების მიმართულებებს.
+            </p>
+            <button><a href="https://read.dukeupress.edu/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture10.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://royalsociety.org/journals/">Royal Society Journals Collection</a> </span> 
+                 - ჟურნალები ბიოლოგიურ მეცნიერებების, ფიზიკის,
+                 მათემატიკის, ინჟინერიისადა მათი მომიჯნავედისციპლინებისშესახებ.
+            </p>
+            <button><a href="https://royalsociety.org/journals/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture2.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://www.cambridge.org/core">Cambridge Journals Online </a> </span> - 
+                ჟურნალები ჰუმანიტარულ და სოციალური მეცნიერებების, ისტორია,
+                ენათმეცნიერება, ფილოსოფია, პოლიტიკა, სამართალი, მენეჯმენტის, აგრეთვე ასტრონომია,
+                მათემატიკა, ფიზიკა, ქიმია, ხელოვნება, მასმედია და კომუნიკაცია, გეოგრაფია და სხვა მრავალი
+                მიმართულებით.
+                წარმოდგენილია 530-ზე მეტი სახელწოდების ჟურნალს პერიოდული ნომრები.
+                
+            </p>
+            <button><a href="https://www.cambridge.org/core">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture7.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://msp.org/">Royal Society Journals Collection</a> </span> 
+                - მოიცავს 20რეფერირებად ჟურნალს მათემატიკისა და
+                მისი მომიჯნავე დისციპლინების მიმართულებით.
+                ძირითადი სფეროებია: სტატისტიკა, ანალიტიკა, ალგებრა, გეომეტრია, მექანიკა, ინჟინერია და
+                სხვ.
+            </p>
+            <button><a href="https://msp.org/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture8.jpg" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://dl.acm.org/">ACM Digital Library</a> </span> 
+                 - ჟურნალების ძირითადი მიმართულებაა მექანიკური ინჟინერია და
+                 სხვადასხვა საინჟინრო მიმართულება, მათ შორისაა: აეროკოსმიური, საზღვაო,
+                 ნანოინჟინერიის, სამედიცინო, მანქანათმშენებლობის და სხვა დარგები. მოიცავს 20-მდე
+                 რეფერირებად ჟურნალს. 
+            </p>
+            <button><a href="https://dl.acm.org/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture9.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://uk.sagepub.com/en-gb/eur/IMEchE">IMechE Journals</a> </span> 
+                 - ჟურნალების ძირითადი მიმართულებაა მექანიკური ინჟინერია და
+                 სხვადასხვა საინჟინრო მიმართულება, მათ შორისაა: აეროკოსმიური, საზღვაო,
+                 ნანოინჟინერიის, სამედიცინო, მანქანათმშენებლობის და სხვა დარგები. მოიცავს 20-მდე
+                 რეფერირებად ჟურნალს. 
+            </p>
+            <button><a href="https://uk.sagepub.com/en-gb/eur/IMEchE">ბმულის გახსნა</a></button>
+        </div>
+    </div> 
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture12.jpg" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://www.biologists.com/">The Company of Biologists' Journals</a> </span> 
+                 - ძირითადად ფრანგულენოვანი ჟურნალების ბაზაა
+                 ჰუმანიტარული და სოციალური მეცნიერებების მიმართულებით. აბსტრაქტები
+                 მოცემულია სხვადასხვა ევროპულენებზე.                             
+            </p>
+            <button><a href="https://www.biologists.com/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture11.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://erj.ersjournals.com/">European Respiratory Journal</a> </span> 
+                 - კლინიკური და ექსპერიმენტული მედიცინის მიმართულება -
+                 წარმოდგენილია სტატიები ბიოლოგიური, ეპიდემიოლოგიური, იმუნოლოგიური,
+                 ონკოლოგიური და სხვ. მიმართულებებით. 
+            </p>
+            <button><a href="https://erj.ersjournals.com/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+
+    <div class="actives-wparper">
+        <div class="logo">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Picture13.png" alt="library logo">
+        </div>
+        <div class="content-text">
+            <p class="paragraph">
+                <span><a href="https://www.openedition.org/">Openedition Journals</a> </span> 
+                 - სამეცნიერო ბაზა წარმოდგენილია
+                 ჟურნალით - უჯრედული მეცნიერების და ექსპერიმენტული ბიოლოგიის
+                 სფეროებისშესახებ.                             
+            </p>
+            <button><a href="https://www.openedition.org/">ბმულის გახსნა</a></button>
+        </div>
+    </div>
+</div>
