@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .cont-wrapper {
+            width: 100%;
+        }
+        .sourc-wrapper {
+            display: flex;
+            max-width: 500px;
+            margin: 10px 0;
+            background-color: rgb(247, 245, 243);
+            padding: 5px;
+        }
+        .sourc-wrapper img {
+            min-width: 70px;
+            max-width: 70px;
+            max-height: 50px;
+            margin: auto 0;
+            margin-right: 5px;
+        }
+        .source-content h5 {
+            margin: 5px 0;
+        }
+        .source-content h5 a{
+            text-decoration: none;
+            color: rgb(24, 23, 23);
+        }
+        .source-content p {
+            margin: 5px 0;
+        }
+        
+        .source-content button {
+            width: 150px;
+            height: 40px;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            background-color: #009999;
+        }
+        .source-content button a{
+            width: 150px;
+            height: 40px;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            color: white;
+        }
+
+        @media only screen and (max-width: 350px) {
+            .sourc-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+}
+    </style>
+    <div class="cont-wrapper">
+        <div class="sourc-wrapper">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Internet_Archive_logo_and_wordmark.svg.png" alt="Internet archive">
+           <div class="source-content">
+            <h5><a href="https://archive.org/">Internet Archive</a></h5>
+            <p>ელექტრონული წიგნების, ვიდეო, 
+            აუდიო და სატელევიზიო ფაილების ღია ონლაინ ბიბლიოთეკა</p>
+            <button>
+                <a href="https://archive.org/">ბმულზე გადასვლა</a>
+            </button>
+           </div>
+        </div>
+         <div class="sourc-wrapper">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/Logo-eLibrary-Project-Gut.png" alt="gutenberg">
+           <div class="source-content">
+            <h5><a href="https://www.gutenberg.org/">Project Gutenberg</a></h5>
+            <p>ელექტრონული წიგნების პირველი ღია ონლაინ ბიბლიოთეკა</p>
+            <button>
+                <a href="https://www.gutenberg.org/">ბმულზე გადასვლა</a>
+            </button>
+           </div>
+        </div>
+         <div class="sourc-wrapper">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/LibriVox-logotype.svg.png" alt="">
+           <div class="source-content">
+            <h5><a href="https://librivox.org/">Librivox</a></h5>
+            <p>აუდიო-წიგნების ღია ონლაინ ბიბლიოთეკა</p>
+            <button>
+                <a href="https://librivox.org/">ბმულზე გადასვლა</a>
+            </button>
+           </div>
+        </div>
+         <div class="sourc-wrapper">
+            <img src="https://sciencelib.ge/wordpress/wp-content/uploads/2023/05/avatars-000149421140-co1rp6-t500x500.jpg" alt="">
+           <div class="source-content">
+            <h5><a href="http://www.openmusicarchive.org/"> Open Music Archive </a></h5>
+            <p>მუსიკალური ჩანაწერების ღია ონლაინ არქივი</p>
+            <button>
+                <a href="http://www.openmusicarchive.org/">ბმულზე გადასვლა</a>
+            </button>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
